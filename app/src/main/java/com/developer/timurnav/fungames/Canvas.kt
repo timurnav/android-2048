@@ -49,8 +49,15 @@ class Canvas(size: Int) {
         }
     }
 
-    fun numberAt(column: Int, row: Int): Int {
-        return data[row][column]
+    /**
+     * iterFunction(row, column, value)
+     */
+    fun iterateThrough(iterFunction: (Int, Int, Int) -> Unit) {
+        (0..lastIndex).forEach { row ->
+            (0..lastIndex).forEach { column ->
+                iterFunction(row, column, data[row][column])
+            }
+        }
     }
 }
 

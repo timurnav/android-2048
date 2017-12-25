@@ -9,6 +9,7 @@ import android.graphics.drawable.shapes.RoundRectShape
 import android.util.AttributeSet
 import android.view.View
 import com.developer.timurnav.fungames.R
+import com.developer.timurnav.fungames.TileFactory
 
 
 class BackgroundView(
@@ -17,6 +18,7 @@ class BackgroundView(
 ) : View(context, attrs) {
 
     private val composite: Drawable
+    val tileFactory: TileFactory
 
     init {
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.BackgroundView, 0, 0)
@@ -25,8 +27,12 @@ class BackgroundView(
         val tileRound = attributes.getDimension(R.styleable.BackgroundView_tile_round, 0f)
         val tileSize = attributes.getDimensionPixelSize(R.styleable.BackgroundView_tile_size, 0)
         val frameColor = attributes.getColor(R.styleable.BackgroundView_frame_color, 0)
+        attributes.recycle()
+
+        tileFactory = TileFactory(tileSize, tileRound, tileMargin, tilesNumber)
 
         val rounds = FloatArray(8, { _ -> tileRound })
+
         val array = (0 until tilesNumber).flatMap { row ->
             val rowOffset = (tileSize + tileMargin) * row
             (0 until tilesNumber).map { column ->
@@ -46,7 +52,6 @@ class BackgroundView(
 
         composite = LayerDrawable(array)
 
-        attributes.recycle()
     }
 
     override fun onDraw(canvas: Canvas) {

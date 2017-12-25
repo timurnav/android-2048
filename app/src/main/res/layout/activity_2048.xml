@@ -6,21 +6,25 @@
 
     <RelativeLayout
         android:id="@+id/canvas_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_centerInParent="true"
         android:background="@drawable/base_background">
 
         <com.developer.timurnav.fungames.views.BackgroundView
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:padding="10dp"
+            android:id="@+id/game_playground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:frame_color="@color/background0"
             app:tile_margin="10dp"
             app:tile_round="10dp"
-            app:tile_size="80dp"
+            app:tile_size="75dp"
             app:tiles_number="4" />
 
+        <RelativeLayout
+            android:id="@+id/tiles_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
 </RelativeLayout>
