@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BackgroundView">
+        <attr name="tiles_number" format="integer" />
+        <attr name="tile_size" format="dimension" />
+        <attr name="tile_margin" format="dimension" />
+        <attr name="tile_round" format="dimension" />
+        <attr name="frame_color" format="color" />
+    </declare-styleable>
+</resources>
