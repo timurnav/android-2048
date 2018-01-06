@@ -1,4 +1,6 @@
-package com.developer.timurnav.fungames
+package com.developer.timurnav.fungames.gameboard
+
+import com.developer.timurnav.fungames.R
 
 class TileFactory(
         private val tileSize: Int,
@@ -7,11 +9,19 @@ class TileFactory(
         private val tilesNumber: Int) {
 
     fun createTile(number: Int, row: Int, column: Int): Tile {
+        return Tile.create(number, row, column, tileSize, tileRound, tileMargin, getViewState(number))
+    }
+
+    fun upgrade(tile: Tile, number: Int) {
+        tile.update(number, getViewState(number))
+    }
+
+    private fun getViewState(number: Int): Tile.ViewState {
         val background = getBackgroundColor(number)
         val color = if (number < 8) R.color.color2 else R.color.color8
         val textSize = if (number < 100) 50f else if (number < 1000) 40f else 30f
-        val text = if (number == 0) "" else number.toString()
-        return Tile.createTile(text, row, column, textSize, color, background, tileSize, tileRound, tileMargin)
+        val viewState = Tile.ViewState(textSize, color, background)
+        return viewState
     }
 
     private fun getBackgroundColor(number: Int): Int {

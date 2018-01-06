@@ -1,9 +1,10 @@
-package com.developer.timurnav.fungames
+package com.developer.timurnav.fungames.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.developer.timurnav.fungames.R
 
 class MainActivity : AppCompatActivity() {
 

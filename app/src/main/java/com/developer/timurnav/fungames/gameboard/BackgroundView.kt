@@ -1,4 +1,4 @@
-package com.developer.timurnav.fungames.views
+package com.developer.timurnav.fungames.gameboard
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,7 +9,6 @@ import android.graphics.drawable.shapes.RoundRectShape
 import android.util.AttributeSet
 import android.view.View
 import com.developer.timurnav.fungames.R
-import com.developer.timurnav.fungames.TileFactory
 
 
 class BackgroundView(

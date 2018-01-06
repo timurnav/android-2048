@@ -1,4 +1,4 @@
-package com.developer.timurnav.fungames
+package com.developer.timurnav.fungames.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
